@@ -1,0 +1,8 @@
+*/bin/*
+*/debug/*
+*.vs/*
+*/obj/*
+*/deps/*
+BigWalk.Local.props
+*build/*
+NuGet.Config

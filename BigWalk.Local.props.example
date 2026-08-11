@@ -1,0 +1,4 @@
+<Project>
+  <!-- Change this to your local Big Walk installation. -->
+  <BigWalkDir>C:\Path\To\Big Walk</BigWalkDir>
+</Project>

@@ -1,0 +1,33 @@
+<Project>
+
+  <Target Name="ValidateBigWalkPath"
+          BeforeTargets="BeforeBuild"
+          Condition="'$(BigWalkDir)' == ''">
+
+    <Error Text="
+      Big Walk installation path has not been configured.
+
+      Create:
+        config\BigWalk.Local.props
+
+      based on:
+        config\BigWalk.Local.props.example
+      " />
+
+  </Target>
+
+  <Target Name="ValidateBigWalkInstallation"
+          BeforeTargets="BeforeBuild"
+          Condition="'$(BigWalkDir)' != ''">
+
+    <Error
+      Condition="!Exists('$(BigWalkDir)')"
+      Text="Big Walk installation does not exist: $(BigWalkDir)" />
+
+    <Error
+      Condition="!Exists('$(BigWalkDir)\GameAssembly.dll')"
+      Text="GameAssembly.dll was not found. BigWalkDir may be incorrect: $(BigWalkDir)" />
+
+  </Target>
+
+</Project>

@@ -1,0 +1,4 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)config\BigWalk.Local.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)config\BigWalk.Local.props')" />
+</Project>
